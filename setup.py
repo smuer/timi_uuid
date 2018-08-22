@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="timi-uuid",
-    version="0.0.2",
+    version="0.0.3",
     url='http://github.com/lxl0928/timi_uuid',
     author='Timi long',
     author_email='lixiaolong@smuer.cn',
