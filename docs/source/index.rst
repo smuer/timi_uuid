@@ -15,6 +15,8 @@ The Interface
     
     .. autofunction:: get_uuid
     .. autofunction:: get_uuid_obj
+    .. autofunction:: get_32uuid
+    .. autofunction:: get_36uuid
 
 Recipes
 -------
@@ -36,7 +38,8 @@ Timi-UUIDs can get a random uuid5 str.::
 
     >>> timi_uuid.get_uuid_obj()
     UUID('fe556b46-3c17-5969-9740-d8f9d9e3e41c')
->>>
+
+    >>>
 
 
 Indices and tables
