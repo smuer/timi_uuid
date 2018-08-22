@@ -9,7 +9,7 @@ setup(
     description='A sensible class for dealing with random UUID5 str',
     long_description=
 """
-timi_uuid is a lightweight Python library for sensibly dealing with random UUID5. It allows you to create random UUID5 str in a variety of different ways. Take a look at `the docs <http://packages.python.org/timi-uuid>`_ for the interface.
+timi_uuid is a lightweight Python library for sensibly dealing with random UUID5. It allows you to create random UUID5 str in a variety of different ways. Take a look at `the docs <https://github.com/lxl0928/timi_uuid/blob/master/README.md>`_ for the interface.
 """,
     packages=['timi_uuid'],
     classifiers=[
