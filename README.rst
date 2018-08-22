@@ -1,7 +1,7 @@
 timi_uuid
 =======
 
-timi_uuid is a lightweight Python library for sensibly dealing with UUID5 (or Time Random UUIDs as we like to sometimes call them). It allows you to create UUID str in a variety of different ways. Take a look at `the docs <http://packages.python.org/timi-uuid>`_ for the interface.
+timi_uuid is a lightweight Python library for sensibly dealing with UUID5 (or Time Random UUIDs as we like to sometimes call them). It allows you to create UUID str in a variety of different ways. Take a look at `the docs <https://github.com/lxl0928/timi_uuid/blob/master/README.md>`_ for the interface.
 
 Who/What/When/Where
 -------------------
@@ -10,7 +10,7 @@ Author: Timi long (`@timilong <http://blog.timilong.com>`_)
 
 PyPi: `http://pypi.python.org/pypi/timi-uuid/ <http://pypi.python.org/pypi/timi-uuid/>`_
 
-Docs: `http://packages.python.org/timi-uuid/ <http://packages.python.org/timi-uuid/>`_
+Docs: `http://packages.python.org/timi-uuid/ <https://github.com/lxl0928/timi_uuid/blob/master/README.md/>`_
 
 License: MIT License
 
