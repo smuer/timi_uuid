@@ -2,15 +2,12 @@ from setuptools import setup
 
 setup(
     name="timi-uuid",
-    version="0.0.3",
+    version="0.0.4",
     url='http://github.com/lxl0928/timi_uuid',
     author='Timi long',
     author_email='lixiaolong@smuer.cn',
-    description='A sensible class for dealing with random UUID5 str',
-    long_description=
-"""
-timi_uuid is a lightweight Python library for sensibly dealing with random UUID5. It allows you to create random UUID5 str in a variety of different ways. Take a look at `the docs <https://github.com/lxl0928/timi_uuid/blob/master/README.md>`_ for the interface.
-""",
+    description='A sensible class for dealing with single machine generate auto-incrementing uuid str.',
+    long_description= """A sensible class for dealing with single machine generate auto-incrementing uuid str. """,
     packages=['timi_uuid'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
