@@ -1,6 +1,11 @@
 # timi_uuid
 Single machine generate auto-incrementing uuid str.
 
+# install 
+```
+pip install timi-uuid
+```
+
 # examples
 
 ```
