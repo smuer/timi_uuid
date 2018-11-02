@@ -6,7 +6,27 @@
 #          /
 
 """
-Description: single machine generate auto-incrementing uuid str.
+Description:
+    single machine generate auto-incrementing uuid str.
+
+Warning:
+    >>> a = "0xffffffffffff"
+
+    >>> b = int(a, 16)
+    >>> b
+    281474976710655
+
+    >>> c = b / 10.0 ** 5
+    >>> c
+    2814749767.10655
+
+    >>> from datetime import datetime
+    >>> datetime.fromtimestamp(c).strftime("%Y-%m-%d %H:%M:%S.%f")
+    '2059-03-13 10:56:07.106550'
+
+    >>>  # 目前12位16进制的字符存储时间戳，将在上面这个时间后12位16进制字符将无法存储当前时间戳。
+
+
 
 Examples:
     >>> from timie_uuid import TimiUUID
