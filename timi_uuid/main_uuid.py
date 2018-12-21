@@ -14,17 +14,17 @@ class TimiUUID(object):
     new_obj = TimiUUID()
 
     timi_uuid = new_obj.get_id()
-    # '8c288f25-d690-4600-f911-e6011175d101'
+    return: '8c288f25-d690-4600-f911-e6011175d101'
 
     timi_uuid_info = new_obj.get_id_info('8c288f25-d690-4600-f911-e6011175d101')
-    # {
-    #     'timestamp': 1541058282.02128,
-    #     'seq': 1,
-    #     'pid': 5982,
-    #     'mac': '46:00:f9:11:e6:01',
-    #     'msg': 'Success.',
-    #     'datetime': '2018-11-01 15:44:42.021280'
-    # }
+    return: {
+        'timestamp': 1541058282.02128,
+        'seq': 1,
+        'pid': 5982,
+        'mac': '46:00:f9:11:e6:01',
+        'msg': 'Success.',
+        'datetime': '2018-11-01 15:44:42.021280'
+    }
 
     """
     def __init__(self, _id=None):
@@ -165,3 +165,22 @@ class TimiUUID(object):
         _res_info['msg'] = 'Success.'
 
         return _res_info
+
+    @property
+    def hex(self):
+        return "".join(self.get_id().split("-"))
+
+    def hex_to_id(self, hex_id):
+        """ "8c8b7fe3-495b-8c85-9039-ab0126dae101"
+
+        :param hex_id: "8c8b7fe3495b8c859039ab0126dae101"
+        :return: "8c8b7fe3-495b-8c85-9039-ab0126dae101"
+        """
+        if not hex_id:
+            return ''
+
+        if len(hex_id) != 32:
+            return ''
+
+        self._id = "-".join([hex_id[:8], hex_id[8:12], hex_id[12:16], hex_id[16:20], hex_id[20:]])
+        return self._id

@@ -1,8 +1,7 @@
 timi_uuid
 =======
 
-timi_uuid is a lightweight Python library for sensibly dealing with UUID5 (or Time Random UUIDs as we like to sometimes call them). It allows you to create UUID str in a variety of different ways. Take a look at `the docs <https://github.com/lxl0928/timi_uuid/blob/master/README.md>`_ for the interface.
-
+Single machine generate auto-incrementing uuid str. If you have any questions please contact to `https://blog.timilong.com/about <https://blog.timilong.com/about/>`_
 
 The Interface
 -------------
@@ -11,6 +10,9 @@ The Interface
 
     .. autofunction:: get_id
     .. autofunction:: get_id_info
+    .. autofunction:: hex
+    .. autofunction:: hex_to_id
+
 
 Recipes
 -------
@@ -27,14 +29,20 @@ Timi-UUIDs single machine generate auto-incrementing uuid str..::
     '8c288f25-d690-4600-f911-e6011175d101'
 
     >>> timi_uuid.get_id_info(cnt_id="8c288f25-d690-4600-f911-e6011175d101")
-    # {
-    #     'timestamp': 1541058282.02128,
-    #     'seq': 1,
-    #     'pid': 5982,
-    #     'mac': '46:00:f9:11:e6:01',
-    #     'msg': 'Success.',
-    #     'datetime': '2018-11-01 15:44:42.021280'
-    # }
+    {
+        'timestamp': 1541058282.02128,
+        'seq': 1,
+        'pid': 5982,
+        'mac': '46:00:f9:11:e6:01',
+        'msg': 'Success.',
+        'datetime': '2018-11-01 15:44:42.021280'
+    }
+
+    >>> obj.hex
+    '8c8cca7e5fab8c859039ab0128640101'
+
+    >>> timi_uuid.hex_to_id(hex_id="8c8cca7e5fab8c859039ab0128640101")
+    '8c8cca7e-5fab-8c85-9039-ab0128640101'
 
 
 Who/What/When/Where
