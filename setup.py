@@ -2,12 +2,12 @@ from setuptools import setup
 
 setup(
     name="timi-uuid",
-    version="0.1.1",
+    version="1.0.0",
     url='http://github.com/lxl0928/timi_uuid',
     author='Timi long',
     author_email='lixiaolong@smuer.cn',
     description='A sensible class for dealing with single machine generate auto-incrementing uuid str.',
-    long_description= """A sensible class for dealing with single machine generate auto-incrementing uuid str. """,
+    long_description="""A sensible class for dealing with single machine generate auto-incrementing uuid str. """,
     packages=['timi_uuid'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
