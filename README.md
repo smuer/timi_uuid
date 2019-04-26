@@ -9,11 +9,11 @@ pip install timi-uuid
 # examples
 
 ```
-    >>> from timie_uuid import TimiUUID
+    >>> from timi_uuid import timi_uuid
 
-    >>> obj = TimiUUID()
+    >>> 
 
-    >>> obj.get_id()
+    >>> timi_uuid.get_id()
     '8c288f25-d690-4600-f911-e6011175d101'
 
     >>> timi_uuid.get_id_info(cnt_id="8c288f25-d690-4600-f911-e6011175d101")
@@ -26,7 +26,7 @@ pip install timi-uuid
         'datetime': '2018-11-01 15:44:42.021280'
     }
 
-    >>> obj.hex
+    >>> timi_uuid.hex
     '8c8cca7e5fab8c859039ab0128640101'
 
     >>> timi_uuid.hex_to_id(hex_id="8c8cca7e5fab8c859039ab0128640101")
