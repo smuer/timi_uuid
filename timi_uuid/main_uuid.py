@@ -95,7 +95,7 @@ class TimiUUID(object):
         """
         return int("0x"+_hex_str, 16)
 
-    def get_id(self):
+    def _get_id(self):
         """ Get a TimiUUID str.
 
         :return: <string length 36> "8c288a6f-c52e-4600-f911-e60111658101"
@@ -111,8 +111,10 @@ class TimiUUID(object):
                     self.mac_addr[:4],
                     self.mac_addr[4:8],
                     self.mac_addr[8:] + self.pid_hex + self.sequence_num]
+        return _tmp_list
 
-        return "-".join(_tmp_list)
+    def get_id(self):
+        return "-".join(self._get_id())
 
     def get_id_info(self, cnt_id=None):
         """ Get TimiUUID info.
@@ -168,6 +170,10 @@ class TimiUUID(object):
 
     @property
     def hex(self):
+        """
+
+        :return: "8c8b7fe3495b8c859039ab0126dae101"
+        """
         return "".join(self.get_id().split("-"))
 
     def hex_to_id(self, hex_id):
