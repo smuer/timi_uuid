@@ -56,6 +56,14 @@ class TimiUUID(object):
         str_hex_mac = uuid.UUID(int=uuid.getnode()).hex[-12:]
         return str_hex_mac
 
+    def get_mac_addr(self):
+        return self.__get_mac_address()
+
+    def __get_random_12_str(self):
+        _uuid = "{}".format(uuid.uuid4())
+        res = _uuid[-12:]
+        return res
+
     def __get_pid(self):
         """ Get pid hex str.
         example:
@@ -101,7 +109,7 @@ class TimiUUID(object):
         :return: <string length 36> "8c288a6f-c52e-4600-f911-e60111658101"
         """
         self.unix_time = self.__get_unix_now()
-        self.mac_addr = self.__get_mac_address()
+        self.mac_addr = self.__get_random_12_str()  # self.__get_mac_address()
         self.pid_hex = self.__get_pid()
         self.sequence_num = self.__get_sequence_number()
 
@@ -116,10 +124,13 @@ class TimiUUID(object):
     def get_id(self):
         return "-".join(self._get_id())
 
+    def get_hex_id(self):
+        return "".join(self.get_id().split("-"))
+
     def get_id_info(self, cnt_id=None):
         """ Get TimiUUID info.
 
-        :param _id: <str> "8c288a6f-c52e-4600-f911-e60111658101"
+        :param cnt_id: <str> "8c288a6f-c52e-4600-f911-e60111658101"
         :return: <dict>
             {
                 'timestamp': 1541057491.61262,
@@ -131,7 +142,7 @@ class TimiUUID(object):
             }
         """
         self._id = cnt_id
-        _res_info = dict(timestamp="", seq="", pid="", mac="", msg="", datetime="")
+        _res_info = dict(timestamp="", seq="", pid="", random_mac="", msg="", datetime="")
         _res_info['msg'] = "The _id format like: '8c26eb17-d7a0-4600-f911-e60128326101'"
         if not self._id:
             return _res_info
@@ -161,7 +172,7 @@ class TimiUUID(object):
         _timestamp = self.__hex2int(_hex_str=self.unix_time) / 10.0 ** 5
         _res_info['timestamp'] = _timestamp
         _res_info['datetime'] = datetime.fromtimestamp(_timestamp).strftime("%Y-%m-%d %H:%M:%S.%f")
-        _res_info['mac'] = ":".join([self.mac_addr[e:e+2] for e in range(0, 11, 2)])
+        _res_info['random_mac'] = ":".join([self.mac_addr[e:e+2] for e in range(0, 11, 2)])
         _res_info['seq'] = self.__hex2int(_hex_str=self.sequence_num) - 256
         _res_info['pid'] = self.__hex2int(_hex_str=self.pid_hex) - 65535
         _res_info['msg'] = 'Success.'

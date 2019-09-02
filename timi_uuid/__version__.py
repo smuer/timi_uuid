@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 __title__ = "timi-uuid"
 __description__ = "A sensible class for dealing with single machine generate auto-incrementing uuid str."
 __url__ = "https://github.com/lxl0928/timi_uuid"

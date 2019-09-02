@@ -9,6 +9,7 @@ The Interface
 .. automodule:: time_uuid
 
     .. autofunction:: get_id
+    .. autofunction:: get_hex_id
     .. autofunction:: get_id_info
     .. autofunction:: hex
     .. autofunction:: hex_to_id
@@ -27,6 +28,9 @@ Timi-UUIDs single machine generate auto-incrementing uuid str..::
 
     >>> obj.get_id()
     '8c288f25-d690-4600-f911-e6011175d101'
+
+    >>> timi_uuid.get_hex_id()
+    '8c288f25d6904600f911e6011175d101'
 
     >>> timi_uuid.get_id_info(cnt_id="8c288f25-d690-4600-f911-e6011175d101")
     {
